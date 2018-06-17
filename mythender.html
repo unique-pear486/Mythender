@@ -1,172 +1,165 @@
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="mythender.css">
-  </head>
-  <body>
-    <div class="sheet-container">
-      <div class="sheet-title">
-        <h1>Mythender Playsheet</h1>
-        <label>Name:</label><input type="text" name="attr_character_name" />
-        <label>Player:</label><input type="text" name="attr_player_name" />
-        <br>
-        <label>Past:</label><input type="text" name="attr_past" />
-        <label>Heart:</label><input type="text" name="attr_heart" />
-        of
-        <label>Fate:</label><input type="text" name="attr_fate" />
+<div class="sheet-container">
+  <div class="sheet-title">
+    <h1>Mythender Playsheet</h1>
+    <label>Name:</label><input type="text" name="attr_character_name" />
+    <label>Player:</label><input type="text" name="attr_player_name" />
+    <br>
+    <label>Past:</label><input type="text" name="attr_past" />
+    <label>Heart:</label><input type="text" name="attr_heart" />
+    of
+    <label>Fate:</label><input type="text" name="attr_fate" />
+  </div>
+  <div class="sheet-storm">
+    <h2>Storm Dice</h2>
+    <label>Storm Rating:</label><input type="number" name="attr_storm_rating" value="3" />
+    <span class="sheet-description"> give you 1 thunder each</span>
+  </div>
+  <div class="sheet-might">
+    <h2>Might Tokens</h2>
+    <label>Might Tokens:</label><input type="number" name="attr_might_tokens" value="5" />
+    <span class="sheet-description">Spend Might to power your gifts</span>
+  </div>
+  <div class="sheet-wounds">
+    <h2>Wounds</h2>
+    <label>3</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
+    <label>4</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
+    <label>5</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
+    <label>6</label><br>
+    <span>Your wound cost</span><input type="number" name="attr_wound_cost" disabled="true" value="3" />
+  </div>
+  <div class="sheet-thunder">
+    <h2>Thunder Dice</h2>
+    <label>Thunder Dice:</label><input type="number" name="attr_thunder_dice" value="1" />
+    <span class="sheet-description"> give you 1 Lightning each</span><br>
+    <span class="sheet-description">Temporary Thunder always go away</span>
+    <div class="sheet-quick-ref">
+      <h3>Starting Thunder</h3>
+      <p>When you start a battle you get Thunder Dice based on your current Form level:</p>
+      <p>Mortal = 1, Paragon = 2, Supernatural = 4, Godly = 6</p>
+    </div>
+  </div>
+  <div class="sheet-lightning">
+    <h2>Lightning Tokens</h2>
+    <label>Lightning Tokens:</label><input type="number" name="attr_lightning_tokens" value="0" />
+    <span class="sheet-description">Spend Lightning to Harm a Foe or create and destroy Blights</span><br>
+    <div class="sheet-quick-ref">
+      <h3>Starting Lightning</h3>
+      <p>When you start a battle you have no Lightning Tokens</p>
+    </div>
+  </div>
+  <div class="sheet-weapons">
+    <h2>Weapons</h2>
+    <div class="sheet-weapon" id="weapon-1">
+      <div class="sheet-weapon-name">
+        <input type="text" name="attr_weapon_1" /><div class="sheet-post-label">... is my weapon.</div>
+        <label for="mythender_weapon_1_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_1_intrinsic" id="mythender_weapon_1_intrinsic" value="1" />
+        <label for="mythender_weapon_1_relic">Relic</label><input type="checkbox" name="attr_weapon_1_relic" id="mythender_weapon_1_relic" value="1" />
+        <label for="mythender_weapon_1_companion">Companion</label><input type="checkbox" name="attr_weapon_1_companion" id="mythender_weapon_1_companion" value="1" />
       </div>
-      <div class="sheet-storm">
-        <h2>Storm Dice</h2>
-        <label>Storm Rating:</label><input type="number" name="attr_storm_rating" value="3" />
-        <span class="sheet-description"> give you 1 thunder each</span>
-      </div>
-      <div class="sheet-might">
-        <h2>Might Tokens</h2>
-        <label>Might Tokens:</label><input type="number" name="attr_might_tokens" value="5" />
-        <span class="sheet-description">Spend Might to power your gifts</span>
-      </div>
-      <div class="sheet-wounds">
-        <h2>Wounds</h2>
-        <label>3</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-        <label>4</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-        <label>5</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-        <label>6</label><br>
-        <span>Your wound cost</span><input type="number" name="attr_wound_cost" disabled="true" value="3" />
-      </div>
-      <div class="sheet-thunder">
-        <h2>Thunder Dice</h2>
-        <label>Thunder Dice:</label><input type="number" name="attr_thunder_dice" value="1" />
-        <span class="sheet-description"> give you 1 Lightning each</span><br>
-        <span class="sheet-description">Temporary Thunder always go away</span>
-        <div class="sheet-quick-ref">
-          <h3>Starting Thunder</h3>
-          <p>When you start a battle you get Thunder Dice based on your current Form level:</p>
-          <p>Mortal = 1, Paragon = 2, Supernatural = 4, Godly = 6</p>
-        </div>
-      </div>
-      <div class="sheet-lightning">
-        <h2>Lightning Tokens</h2>
-        <label>Lightning Tokens:</label><input type="number" name="attr_lightning_tokens" value="0" />
-        <span class="sheet-description">Spend Lightning to Harm a Foe or create and destroy Blights</span><br>
-        <div class="sheet-quick-ref">
-          <h3>Starting Lightning</h3>
-          <p>When you start a battle you have no Lightning Tokens</p>
-        </div>
-      </div>
-      <div class="sheet-weapons">
-        <h2>Weapons</h2>
-        <div class="sheet-weapon" id="weapon-1">
-          <div class="sheet-weapon-name">
-            <input type="text" name="attr_weapon_1" /><div class="sheet-post-label">... is my weapon.</div>
-            <label for="mythender_weapon_1_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_1_intrinsic" id="mythender_weapon_1_intrinsic" value="1" />
-            <label for="mythender_weapon_1_relic">Relic</label><input type="checkbox" name="attr_weapon_1_relic" id="mythender_weapon_1_relic" value="1" />
-            <label for="mythender_weapon_1_companion">Companion</label><input type="checkbox" name="attr_weapon_1_companion" id="mythender_weapon_1_companion" value="1" />
-          </div>
-          <div class="sheet-weapon-dice">
-            <label>+3 dice</label><input type="checkbox" name="attr_weapon_1_charge_1" value="1" /><input type="checkbox" name="attr_weapon_1_drain_1" value="1" />
-            <label>+2 dice</label><input type="checkbox" name="attr_weapon_1_charge_2" value="1" /><input type="checkbox" name="attr_weapon_1_drain_2" value="1" />
-            <label>+2 might</label><input type="checkbox" name="attr_weapon_1_charge_3" value="1" /><input type="checkbox" name="attr_weapon_1_drain_3" value="1" />
-          </div>
-        </div>
-        <div class="sheet-weapon" id="weapon-2">
-          <div class="sheet-weapon-name">
-            <input type="text" name="attr_weapon_2" /><div class="sheet-post-label">... is my weapon.</div>
-            <label for="mythender_weapon_2_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_2_intrinsic" id="mythender_weapon_2_intrinsic" value="1" />
-            <label for="mythender_weapon_2_relic">Relic</label><input type="checkbox" name="attr_weapon_2_relic" id="mythender_weapon_2_relic" value="1" />
-            <label for="mythender_weapon_2_companion">Companion</label><input type="checkbox" name="attr_weapon_2_companion" id="mythender_weapon_2_companion" value="1" />
-          </div>
-          <div class="sheet-weapon-dice">
-            <label>+3 dice</label><input type="checkbox" name="attr_weapon_2_charge_1" value="1" /><input type="checkbox" name="attr_weapon_2_drain_1" value="1" />
-            <label>+2 dice</label><input type="checkbox" name="attr_weapon_2_charge_2" value="1" /><input type="checkbox" name="attr_weapon_2_drain_2" value="1" />
-            <label>+2 might</label><input type="checkbox" name="attr_weapon_2_charge_3" value="1" /><input type="checkbox" name="attr_weapon_2_drain_3" value="1" />
-          </div>
-        </div>
-        <div class="sheet-weapon" id="weapon-3">
-          <div class="sheet-weapon-name">
-            <input type="text" name="attr_weapon_3" /><div class="sheet-post-label">... is my weapon.</div>
-            <label for="mythender_weapon_3_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_3_intrinsic" id="mythender_weapon_3_intrinsic" value="1" />
-            <label for="mythender_weapon_3_relic">Relic</label><input type="checkbox" name="attr_weapon_3_relic" id="mythender_weapon_3_relic" value="1" />
-            <label for="mythender_weapon_3_companion">Companion</label><input type="checkbox" name="attr_weapon_3_companion" id="mythender_weapon_3_companion" value="1" />
-          </div>
-          <div class="sheet-weapon-dice">
-            <label>+3 dice</label><input type="checkbox" name="attr_weapon_3_charge_1" value="1" /><input type="checkbox" name="attr_weapon_3_drain_1" value="1" />
-            <label>+2 dice</label><input type="checkbox" name="attr_weapon_3_charge_2" value="1" /><input type="checkbox" name="attr_weapon_3_drain_2" value="1" />
-            <label>+2 might</label><input type="checkbox" name="attr_weapon_3_charge_3" value="1" /><input type="checkbox" name="attr_weapon_3_drain_3" value="1" />
-          </div>
-        </div>
-        <div class="sheet-quick-ref">
-          <h3>Weapons Quick Reference</h3>
-          <p>When using a weapon, you can either <strong>charge</strong> one column (check the top box) and take no bonus dice or might, or <strong>drain</strong> all the charged columns (check the bottom box) to get those bonuses.</p>
-          <p><strong>Intrinsic Weapons</strong> keep their non-drained charges after a battle for free.</p>
-          <p>Bonuses from <strong>Relic Weapons</strong> may become temporary Thunder for free.</p>
-          <p><strong>Companion Weapons</strong> charge when you are Harmed.</p>
-        </div>
-      </div>
-      <div class="sheet-corruption-and-forms">
-        <h2>Mythic Corruption &amp; Forms</h2>
-        <div class="sheet-mortal-form">
-          <label>Mortal Form</label><input type="text" name="attr_mortal_form" />
-          <div class="sheet-pre-label">I appear as...</div>
-        </div>
-        <div class="sheet-personal-blight">
-          <label>Personal Blight</label><input type="text" name="attr_personal_blight" />
-          <div class="sheet-post-label">... in my presence.</div>
-        </div>
-        <div class="sheet-corruption">
-          <h3>Corruption</h3><br>
-          <label>4</label><input type="checkbox" name="attr_corruption_1" value="1" /><label>4</label><input type="checkbox" name="attr_corruption_2" value="1" /><br>
-          <label>3</label><input type="checkbox" name="attr_corruption_3" value="1" /><label>3</label><input type="checkbox" name="attr_corruption_4" value="1" /><br>
-          <label>2</label><input type="checkbox" name="attr_corruption_5" value="1" /><label>2</label><input type="checkbox" name="attr_corruption_6" value="1" /><br>
-        </div>
-        <div class="sheet-forms">
-          <div>
-            <label>Paragon</label>
-            <input type="text" name="attr_paragon_form" />
-            <div class="sheet-pre-label">I appear as...</div>
-          </div>
-          <div>
-            <label>Supernatural</label>
-            <input type="text" name="attr_supernatural_form" />
-            <div class="sheet-pre-label">I appear as...</div>
-          </div>
-          <div>
-            <label>Godly</label>
-            <input type="text" name="attr_godly_form" />
-            <div class="sheet-pre-label">I appear as...</div>
-          </div>
-        </div>
-        <div class="sheet-fate">
-          <label>Fate's Powers</label>
-          <input type="text" name="attr_fates_powers" />
-          <div class="sheet-pre-label">My Fate allows my to...</div>
-        </div>
-        <div class="sheet-quick-ref">
-          <h3>Mythic Forms & Fate Quick Reference</h3>
-          <p><strong>Whenever you use the Mythic Die</strong>, you must check off a Mythic Form box, starting with the top-left and proceeding left-to-right and down. If both boxes in a row are filled, you now appear as that Form.</p>
-          <p>After rolling the Mythic Die, consult the number next to the box you just checked. <strong>If the die is equal or higher</strong>, you've lost a piece of your humanity. Congratulations! Check the next Fate box and take a new Gift either now, or at a time when it's neccesary.</p>
-          <p>At the end of the battle, if you checked off a Fate box that has a number on it, you'll check to see if you've Fallen Into Myth.</p>
-        </div>
-      </div>
-      <div class="sheet-gifts">
-        <h2>Gifts</h2>
-        <input type="checkbox" name="attr_fate_1" value="1" checked="true" disabled="true" /><label>X</label>
-        <input type="text" name="attr_gift_1" /><input type="number" name="attr_might_cost_1" /><br>
-        <input type="checkbox" name="attr_fate_2" value="1" /><label>X</label>
-        <input type="text" name="attr_gift_2" /><input type="number" name="attr_might_cost_2" /><br>
-        <input type="checkbox" name="attr_fate_3" value="1" /><label>X</label>
-        <input type="text" name="attr_gift_3" /><input type="number" name="attr_might_cost_3" /><br>
-        <input type="checkbox" name="attr_fate_4" value="1" /><label>X</label>
-        <input type="text" name="attr_gift_4" /><input type="number" name="attr_might_cost_4" /><br>
-        <input type="checkbox" name="attr_fate_5" value="1" /><label>6</label>
-        <input type="text" name="attr_gift_5" /><input type="number" name="attr_might_cost_5" /><br>
-        <input type="checkbox" name="attr_fate_6" value="1" /><label>5</label>
-        <input type="text" name="attr_gift_6" /><input type="number" name="attr_might_cost_6" /><br>
-        <input type="checkbox" name="attr_fate_7" value="1" /><label>4</label>
-        <input type="text" name="attr_gift_7" /><input type="number" name="attr_might_cost_7" /><br>
-        <input type="checkbox" name="attr_fate_8" value="1" /><label>3</label>
-        <input type="text" name="attr_gift_8" /><input type="number" name="attr_might_cost_8" /><br>
-        <input type="checkbox" name="attr_fate_9" value="1" /><label>2</label>
-        <input type="text" name="attr_gift_9" /><input type="number" name="attr_might_cost_9" /><br>
+      <div class="sheet-weapon-dice">
+        <label>+3 dice</label><input type="checkbox" name="attr_weapon_1_charge_1" value="1" /><input type="checkbox" name="attr_weapon_1_drain_1" value="1" />
+        <label>+2 dice</label><input type="checkbox" name="attr_weapon_1_charge_2" value="1" /><input type="checkbox" name="attr_weapon_1_drain_2" value="1" />
+        <label>+2 might</label><input type="checkbox" name="attr_weapon_1_charge_3" value="1" /><input type="checkbox" name="attr_weapon_1_drain_3" value="1" />
       </div>
     </div>
-  </body>
-</html>
+    <div class="sheet-weapon" id="weapon-2">
+      <div class="sheet-weapon-name">
+        <input type="text" name="attr_weapon_2" /><div class="sheet-post-label">... is my weapon.</div>
+        <label for="mythender_weapon_2_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_2_intrinsic" id="mythender_weapon_2_intrinsic" value="1" />
+        <label for="mythender_weapon_2_relic">Relic</label><input type="checkbox" name="attr_weapon_2_relic" id="mythender_weapon_2_relic" value="1" />
+        <label for="mythender_weapon_2_companion">Companion</label><input type="checkbox" name="attr_weapon_2_companion" id="mythender_weapon_2_companion" value="1" />
+      </div>
+      <div class="sheet-weapon-dice">
+        <label>+3 dice</label><input type="checkbox" name="attr_weapon_2_charge_1" value="1" /><input type="checkbox" name="attr_weapon_2_drain_1" value="1" />
+        <label>+2 dice</label><input type="checkbox" name="attr_weapon_2_charge_2" value="1" /><input type="checkbox" name="attr_weapon_2_drain_2" value="1" />
+        <label>+2 might</label><input type="checkbox" name="attr_weapon_2_charge_3" value="1" /><input type="checkbox" name="attr_weapon_2_drain_3" value="1" />
+      </div>
+    </div>
+    <div class="sheet-weapon" id="weapon-3">
+      <div class="sheet-weapon-name">
+        <input type="text" name="attr_weapon_3" /><div class="sheet-post-label">... is my weapon.</div>
+        <label for="mythender_weapon_3_intrinsic">Intrinsic</label><input type="checkbox" name="attr_weapon_3_intrinsic" id="mythender_weapon_3_intrinsic" value="1" />
+        <label for="mythender_weapon_3_relic">Relic</label><input type="checkbox" name="attr_weapon_3_relic" id="mythender_weapon_3_relic" value="1" />
+        <label for="mythender_weapon_3_companion">Companion</label><input type="checkbox" name="attr_weapon_3_companion" id="mythender_weapon_3_companion" value="1" />
+      </div>
+      <div class="sheet-weapon-dice">
+        <label>+3 dice</label><input type="checkbox" name="attr_weapon_3_charge_1" value="1" /><input type="checkbox" name="attr_weapon_3_drain_1" value="1" />
+        <label>+2 dice</label><input type="checkbox" name="attr_weapon_3_charge_2" value="1" /><input type="checkbox" name="attr_weapon_3_drain_2" value="1" />
+        <label>+2 might</label><input type="checkbox" name="attr_weapon_3_charge_3" value="1" /><input type="checkbox" name="attr_weapon_3_drain_3" value="1" />
+      </div>
+    </div>
+    <div class="sheet-quick-ref">
+      <h3>Weapons Quick Reference</h3>
+      <p>When using a weapon, you can either <strong>charge</strong> one column (check the top box) and take no bonus dice or might, or <strong>drain</strong> all the charged columns (check the bottom box) to get those bonuses.</p>
+      <p><strong>Intrinsic Weapons</strong> keep their non-drained charges after a battle for free.</p>
+      <p>Bonuses from <strong>Relic Weapons</strong> may become temporary Thunder for free.</p>
+      <p><strong>Companion Weapons</strong> charge when you are Harmed.</p>
+    </div>
+  </div>
+  <div class="sheet-corruption-and-forms">
+    <h2>Mythic Corruption &amp; Forms</h2>
+    <div class="sheet-mortal-form">
+      <label>Mortal Form</label><input type="text" name="attr_mortal_form" />
+      <div class="sheet-pre-label">I appear as...</div>
+    </div>
+    <div class="sheet-personal-blight">
+      <label>Personal Blight</label><input type="text" name="attr_personal_blight" />
+      <div class="sheet-post-label">... in my presence.</div>
+    </div>
+    <div class="sheet-corruption">
+      <h3>Corruption</h3><br>
+      <label>4</label><input type="checkbox" name="attr_corruption_1" value="1" /><label>4</label><input type="checkbox" name="attr_corruption_2" value="1" /><br>
+      <label>3</label><input type="checkbox" name="attr_corruption_3" value="1" /><label>3</label><input type="checkbox" name="attr_corruption_4" value="1" /><br>
+      <label>2</label><input type="checkbox" name="attr_corruption_5" value="1" /><label>2</label><input type="checkbox" name="attr_corruption_6" value="1" /><br>
+    </div>
+    <div class="sheet-forms">
+      <div>
+        <label>Paragon</label>
+        <input type="text" name="attr_paragon_form" />
+        <div class="sheet-pre-label">I appear as...</div>
+      </div>
+      <div>
+        <label>Supernatural</label>
+        <input type="text" name="attr_supernatural_form" />
+        <div class="sheet-pre-label">I appear as...</div>
+      </div>
+      <div>
+        <label>Godly</label>
+        <input type="text" name="attr_godly_form" />
+        <div class="sheet-pre-label">I appear as...</div>
+      </div>
+    </div>
+    <div class="sheet-fate">
+      <label>Fate's Powers</label>
+      <input type="text" name="attr_fates_powers" />
+      <div class="sheet-pre-label">My Fate allows my to...</div>
+    </div>
+    <div class="sheet-quick-ref">
+      <h3>Mythic Forms & Fate Quick Reference</h3>
+      <p><strong>Whenever you use the Mythic Die</strong>, you must check off a Mythic Form box, starting with the top-left and proceeding left-to-right and down. If both boxes in a row are filled, you now appear as that Form.</p>
+      <p>After rolling the Mythic Die, consult the number next to the box you just checked. <strong>If the die is equal or higher</strong>, you've lost a piece of your humanity. Congratulations! Check the next Fate box and take a new Gift either now, or at a time when it's neccesary.</p>
+      <p>At the end of the battle, if you checked off a Fate box that has a number on it, you'll check to see if you've Fallen Into Myth.</p>
+    </div>
+  </div>
+  <div class="sheet-gifts">
+    <h2>Gifts</h2>
+    <input type="checkbox" name="attr_fate_1" value="1" checked="true" disabled="true" /><label>X</label>
+    <input type="text" name="attr_gift_1" /><input type="number" name="attr_might_cost_1" /><br>
+    <input type="checkbox" name="attr_fate_2" value="1" /><label>X</label>
+    <input type="text" name="attr_gift_2" /><input type="number" name="attr_might_cost_2" /><br>
+    <input type="checkbox" name="attr_fate_3" value="1" /><label>X</label>
+    <input type="text" name="attr_gift_3" /><input type="number" name="attr_might_cost_3" /><br>
+    <input type="checkbox" name="attr_fate_4" value="1" /><label>X</label>
+    <input type="text" name="attr_gift_4" /><input type="number" name="attr_might_cost_4" /><br>
+    <input type="checkbox" name="attr_fate_5" value="1" /><label>6</label>
+    <input type="text" name="attr_gift_5" /><input type="number" name="attr_might_cost_5" /><br>
+    <input type="checkbox" name="attr_fate_6" value="1" /><label>5</label>
+    <input type="text" name="attr_gift_6" /><input type="number" name="attr_might_cost_6" /><br>
+    <input type="checkbox" name="attr_fate_7" value="1" /><label>4</label>
+    <input type="text" name="attr_gift_7" /><input type="number" name="attr_might_cost_7" /><br>
+    <input type="checkbox" name="attr_fate_8" value="1" /><label>3</label>
+    <input type="text" name="attr_gift_8" /><input type="number" name="attr_might_cost_8" /><br>
+    <input type="checkbox" name="attr_fate_9" value="1" /><label>2</label>
+    <input type="text" name="attr_gift_9" /><input type="number" name="attr_might_cost_9" /><br>
+  </div>
+</div>
