@@ -208,19 +208,25 @@
     margin-left: -45px;
     padding: 20px;
 }
+.sheet-rolltemplate-storm {
+    background-image: url("https://raw.githubusercontent.com/unique-pear486/Mythender/master/img/storm.gif");
+    background-repeat: no-repeat;
+}
 .sheet-rolltemplate-title {
     font-size: larger;
+    font-weight: bold;
 }
-.sheet-rolltemplate-dice .inlinerollresult {
-    font-family: 'd6dice';
+.sheet-rolltemplate-dice .inlinerollresult,
+.sheet-rolltemplate-bonus-dice .inlinerollresult {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
     margin: 2px;
     padding: 0px;
     text-align: center;
-    line-height: 20px;
+    line-height: 43px;
+    font-size: 30px;
 }
 .sheet-rolltemplate-storm .sheet-rolltemplate-dice .inlinerollresult {
     background: black;
@@ -241,6 +247,9 @@
 .sheet-rolltemplate-mythic .sheet-rolltemplate-dice .inlinerollresult {
     width: 100px;
     height: 100px;
+    line-height: 100px;
     border-radius: 25px;
     font-size: 90px;
+    background-image: linear-gradient(#FFF65C, #3A2C00);
+    color: #201800;
 }
