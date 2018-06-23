@@ -9,10 +9,17 @@
     of
     <label>Fate:</label><input type="text" name="attr_fate" />
   </div>
+  <div class="sheet-dice">
+    <h2>Dice Buttons</h2>
+    <button title="Storm Dice" type="roll" value="!stormroll @{storm_rating} ?{Bonus Dice|0}" name="roll_StormDice"> f</button>
+    <button title="Thunder Dice" type="roll" value="!thunderroll @{thunder_dice} ?{Bonus Dice|0}" name="roll_ThunderDice"> F</button>
+    <button title="Mythic Dice" class="sheet-mythic-dice" type="roll" value="!mythicroll ?{Bonus Dice|0}" name="roll_MythicDice"> F</button>
+    <div>Hint: drag us to the macro bar!</div>
+  </div>
   <div class="sheet-storm">
     <h2>Storm Dice</h2>
     <label>Storm Rating:</label><input type="number" name="attr_storm_rating" value="3" />
-    <span class="sheet-description"> give you 1 thunder each</span>
+    <div class="sheet-description"><span class="sheet-d6">d e f</span> give you 1 thunder each</div>
   </div>
   <div class="sheet-might">
     <h2>Might Tokens</h2>
@@ -21,17 +28,19 @@
   </div>
   <div class="sheet-wounds">
     <h2>Wounds</h2>
-    <label>3</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-    <label>4</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-    <label>5</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
-    <label>6</label><br>
-    <span>Your wound cost</span><input type="number" name="attr_wound_cost" disabled="true" value="3" />
+    <label class="sheet-box">3</label><input type="checkbox" name="attr_wound_3_checked" value="1" /><br>
+    <label class="sheet-box">4</label><input type="checkbox" name="attr_wound_4_checked" value="1" /><br>
+    <label class="sheet-box">5</label><input type="checkbox" name="attr_wound_5_checked" value="1" /><br>
+    <label class="sheet-box">6</label><br>
+    <label>Wound cost:</label><input type="number" name="attr_wound_cost" disabled="true" value="3" />
   </div>
   <div class="sheet-thunder">
     <h2>Thunder Dice</h2>
     <label>Thunder Dice:</label><input type="number" name="attr_thunder_dice" value="1" />
-    <span class="sheet-description"> give you 1 Lightning each</span><br>
-    <span class="sheet-description">Temporary Thunder always go away</span>
+    <div class="sheet-description">
+      <p><span class="sheet-d6">D E F</span> give you 1 lightning each</span></p>
+      <p>Temporary Thunder always go away</p>
+    </div>
     <div class="sheet-quick-ref">
       <h3>Starting Thunder</h3>
       <p>When you start a battle you get Thunder Dice based on your current Form level:</p>
@@ -57,9 +66,21 @@
         <label for="mythender_weapon_1_companion">Companion</label><input type="checkbox" name="attr_weapon_1_companion" id="mythender_weapon_1_companion" value="1" />
       </div>
       <div class="sheet-weapon-dice">
-        <label>+3 dice</label><input type="checkbox" name="attr_weapon_1_charge_1" value="1" /><input type="checkbox" name="attr_weapon_1_drain_1" value="1" />
-        <label>+2 dice</label><input type="checkbox" name="attr_weapon_1_charge_2" value="1" /><input type="checkbox" name="attr_weapon_1_drain_2" value="1" />
-        <label>+2 might</label><input type="checkbox" name="attr_weapon_1_charge_3" value="1" /><input type="checkbox" name="attr_weapon_1_drain_3" value="1" />
+        <div>
+          <label>+3 dice</label>
+          <input type="checkbox" name="attr_weapon_1_charge_1" value="1" />
+          <input type="checkbox" name="attr_weapon_1_drain_1" value="1" />
+        </div>
+        <div>
+          <label>+2 dice</label>
+          <input type="checkbox" name="attr_weapon_1_charge_2" value="1" />
+          <input type="checkbox" name="attr_weapon_1_drain_2" value="1" />
+        </div>
+        <div>
+          <label>+2 might</label>
+          <input type="checkbox" name="attr_weapon_1_charge_3" value="1" />
+          <input type="checkbox" name="attr_weapon_1_drain_3" value="1" />
+        </div>
       </div>
     </div>
     <div class="sheet-weapon" id="weapon-2">
@@ -70,9 +91,21 @@
         <label for="mythender_weapon_2_companion">Companion</label><input type="checkbox" name="attr_weapon_2_companion" id="mythender_weapon_2_companion" value="1" />
       </div>
       <div class="sheet-weapon-dice">
-        <label>+3 dice</label><input type="checkbox" name="attr_weapon_2_charge_1" value="1" /><input type="checkbox" name="attr_weapon_2_drain_1" value="1" />
-        <label>+2 dice</label><input type="checkbox" name="attr_weapon_2_charge_2" value="1" /><input type="checkbox" name="attr_weapon_2_drain_2" value="1" />
-        <label>+2 might</label><input type="checkbox" name="attr_weapon_2_charge_3" value="1" /><input type="checkbox" name="attr_weapon_2_drain_3" value="1" />
+        <div>
+          <label>+3 dice</label>
+          <input type="checkbox" name="attr_weapon_2_charge_1" value="1" />
+          <input type="checkbox" name="attr_weapon_2_drain_1" value="1" />
+        </div>
+        <div>
+          <label>+2 dice</label>
+          <input type="checkbox" name="attr_weapon_2_charge_2" value="1" />
+          <input type="checkbox" name="attr_weapon_2_drain_2" value="1" />
+        </div>
+        <div>
+          <label>+2 might</label>
+          <input type="checkbox" name="attr_weapon_2_charge_3" value="1" />
+          <input type="checkbox" name="attr_weapon_2_drain_3" value="1" />
+        </div>
       </div>
     </div>
     <div class="sheet-weapon" id="weapon-3">
@@ -83,9 +116,21 @@
         <label for="mythender_weapon_3_companion">Companion</label><input type="checkbox" name="attr_weapon_3_companion" id="mythender_weapon_3_companion" value="1" />
       </div>
       <div class="sheet-weapon-dice">
-        <label>+3 dice</label><input type="checkbox" name="attr_weapon_3_charge_1" value="1" /><input type="checkbox" name="attr_weapon_3_drain_1" value="1" />
-        <label>+2 dice</label><input type="checkbox" name="attr_weapon_3_charge_2" value="1" /><input type="checkbox" name="attr_weapon_3_drain_2" value="1" />
-        <label>+2 might</label><input type="checkbox" name="attr_weapon_3_charge_3" value="1" /><input type="checkbox" name="attr_weapon_3_drain_3" value="1" />
+        <div>
+          <label>+3 dice</label>
+          <input type="checkbox" name="attr_weapon_3_charge_1" value="1" />
+          <input type="checkbox" name="attr_weapon_3_drain_1" value="1" />
+        </div>
+        <div>
+          <label>+2 dice</label>
+          <input type="checkbox" name="attr_weapon_3_charge_2" value="1" />
+          <input type="checkbox" name="attr_weapon_3_drain_2" value="1" />
+        </div>
+        <div>
+          <label>+2 might</label>
+          <input type="checkbox" name="attr_weapon_3_charge_3" value="1" />
+          <input type="checkbox" name="attr_weapon_3_drain_3" value="1" />
+        </div>
       </div>
     </div>
     <div class="sheet-quick-ref">
@@ -107,10 +152,10 @@
       <div class="sheet-post-label">... in my presence.</div>
     </div>
     <div class="sheet-corruption">
-      <h3>Corruption</h3><br>
-      <label>4</label><input type="checkbox" name="attr_corruption_1" value="1" /><label>4</label><input type="checkbox" name="attr_corruption_2" value="1" /><br>
-      <label>3</label><input type="checkbox" name="attr_corruption_3" value="1" /><label>3</label><input type="checkbox" name="attr_corruption_4" value="1" /><br>
-      <label>2</label><input type="checkbox" name="attr_corruption_5" value="1" /><label>2</label><input type="checkbox" name="attr_corruption_6" value="1" /><br>
+      <h3>Corruption</h3>
+      <label class="sheet-box">4</label><input type="checkbox" name="attr_corruption_1" value="1" /><label class="sheet-box">4</label><input type="checkbox" name="attr_corruption_2" value="1" /><br>
+      <label class="sheet-box">3</label><input type="checkbox" name="attr_corruption_3" value="1" /><label class="sheet-box">3</label><input type="checkbox" name="attr_corruption_4" value="1" /><br>
+      <label class="sheet-box">2</label><input type="checkbox" name="attr_corruption_5" value="1" /><label class="sheet-box">2</label><input type="checkbox" name="attr_corruption_6" value="1" /><br>
     </div>
     <div class="sheet-forms">
       <div>
@@ -143,23 +188,37 @@
   </div>
   <div class="sheet-gifts">
     <h2>Gifts</h2>
-    <input type="checkbox" name="attr_fate_1" value="1" checked="true" disabled="true" /><label>X</label>
+    <input type="checkbox" name="attr_fate_1" value="1" checked="true" disabled="true" /><label class="sheet-box">X</label>
     <input type="text" name="attr_gift_1" /><input type="number" name="attr_might_cost_1" /><br>
-    <input type="checkbox" name="attr_fate_2" value="1" /><label>X</label>
+    <input type="checkbox" name="attr_fate_2" value="1" /><label class="sheet-box">X</label>
     <input type="text" name="attr_gift_2" /><input type="number" name="attr_might_cost_2" /><br>
-    <input type="checkbox" name="attr_fate_3" value="1" /><label>X</label>
+    <input type="checkbox" name="attr_fate_3" value="1" /><label class="sheet-box">X</label>
     <input type="text" name="attr_gift_3" /><input type="number" name="attr_might_cost_3" /><br>
-    <input type="checkbox" name="attr_fate_4" value="1" /><label>X</label>
+    <input type="checkbox" name="attr_fate_4" value="1" /><label class="sheet-box">X</label>
     <input type="text" name="attr_gift_4" /><input type="number" name="attr_might_cost_4" /><br>
-    <input type="checkbox" name="attr_fate_5" value="1" /><label>6</label>
+    <input type="checkbox" name="attr_fate_5" value="1" /><label class="sheet-box">6</label>
     <input type="text" name="attr_gift_5" /><input type="number" name="attr_might_cost_5" /><br>
-    <input type="checkbox" name="attr_fate_6" value="1" /><label>5</label>
+    <input type="checkbox" name="attr_fate_6" value="1" /><label class="sheet-box">5</label>
     <input type="text" name="attr_gift_6" /><input type="number" name="attr_might_cost_6" /><br>
-    <input type="checkbox" name="attr_fate_7" value="1" /><label>4</label>
+    <input type="checkbox" name="attr_fate_7" value="1" /><label class="sheet-box">4</label>
     <input type="text" name="attr_gift_7" /><input type="number" name="attr_might_cost_7" /><br>
-    <input type="checkbox" name="attr_fate_8" value="1" /><label>3</label>
+    <input type="checkbox" name="attr_fate_8" value="1" /><label class="sheet-box">3</label>
     <input type="text" name="attr_gift_8" /><input type="number" name="attr_might_cost_8" /><br>
-    <input type="checkbox" name="attr_fate_9" value="1" /><label>2</label>
+    <input type="checkbox" name="attr_fate_9" value="1" /><label class="sheet-box">2</label>
     <input type="text" name="attr_gift_9" /><input type="number" name="attr_might_cost_9" /><br>
   </div>
 </div>
+<rolltemplate class="sheet-rolltemplate-storm">
+  <div class="sheet-rolltemplate-title">{{name}}</div>
+  <div class="sheet-rolltemplate-dice">{{dice}}</div>
+  <div class="sheet-rolltemplate-bonus-dice">{{bonusDice}}</div>
+</rolltemplate>
+<rolltemplate class="sheet-rolltemplate-thunder">
+  <div class="sheet-rolltemplate-title">{{name}}</div>
+  <div class="sheet-rolltemplate-dice">{{dice}}</div>
+  <div class="sheet-rolltemplate-bonus-dice">{{bonusDice}}</div>
+</rolltemplate>
+<rolltemplate class="sheet-rolltemplate-mythic">
+  <div class="sheet-rolltemplate-title">{{name}}</div>
+  <div class="sheet-rolltemplate-dice">{{dice}}</div>
+</rolltemplate>

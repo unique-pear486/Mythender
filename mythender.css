@@ -2,12 +2,13 @@
         display: grid;
         grid-template-columns: 2fr 6fr 3fr;
         grid-template-areas:
-            "st ti mi"
+            "di ti mi"
             "st we mi"
             "st we gi"
             "wo we gi"
             "wo co gi"
             "th co li";
+        grid-column-gap: 5px;
 }
 .sheet-container label {
     display: inline;
@@ -30,8 +31,15 @@
 .sheet-container input[type=text] {
     height: 29px;
 }
+.sheet-d6 {
+    font-family: dicefontd6;
+    font-size: 16pt;
+}
 .sheet-title {
     grid-area: ti;
+}
+.sheet-dice {
+    grid-area: di,
 }
 .sheet-storm {
     grid-area: st;
@@ -85,7 +93,7 @@
 .sheet-post-label {
     right: 5px;
 }
-.sheet-wounds label {
+.sheet-container .sheet-box {
     display: inline-block;
     width: 30px;
     border: 1px solid black;
@@ -93,9 +101,31 @@
     padding: 5px 0px;
     margin: 2px 0px;
 }
+.sheet-container .sheet-dice button {
+    font-family: dicefontd6;
+    font-size: 2em;
+    padding: 5px 5px;
+    background-image: none;
+    border-radius: 5px;
+}
+.sheet-container .sheet-dice button::before {
+    content: none;
+}
+.sheet-dice button.sheet-mythic-dice {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0,0,0,0);
+    background-image: linear-gradient(#FFF65C, #3A2C00);
+    text-shadow: none;
+}
+.sheet-dice button.sheet-mythic-dice:hover {
+    background-position: unset;
+    background-image: linear-gradient(#FFF65C, #3A2C00);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
 .sheet-weapon {
     display: grid;
-    grid-template-columns: 1fr 335px;
+    grid-template-columns: 1fr 200px;
 }
 .sheet-weapon-name {
     position: relative;
@@ -106,7 +136,16 @@
     padding-right: 105px;
 }
 .sheet-weapon-dice {
-    width: 332px;
+    width: 200px;
+}
+.sheet-weapon-dice > div {
+    float: left;
+    text-align: center;
+    margin: 0px 4px;
+}
+.sheet-weapon-dice > div > label {
+    display: block;
+    padding-right: 0px;
 }
 .sheet-weapon .sheet-post-label {
     top: 10px;
@@ -137,10 +176,6 @@
 .sheet-corruption, .sheet-forms {
     grid-column: span 1;
 }
-.sheet-corruption h3 {
-    margin: 0px;
-    font-size: small;
-}
 .sheet-forms input[type=text] {
     width: 100%;
     padding-left: 85px;
@@ -163,9 +198,49 @@
 .sheet-fate .sheet-pre-label {
     top: 20px;
 }
-.sheet-gifts label {
-    width: 14px;
+.sheet-rolltemplate-storm,
+.sheet-rolltemplate-thunder,
+.sheet-rolltemplate-mythic {
+    max-width: 300px;
+    min-height: 150px;
+    background: #12151e;
+    color: white;
+    margin-left: -45px;
+    padding: 20px;
+}
+.sheet-rolltemplate-title {
+    font-size: larger;
+}
+.sheet-rolltemplate-dice .inlinerollresult {
+    font-family: 'd6dice';
     display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 0px;
     text-align: center;
-    padding-right: 0px;
+    line-height: 20px;
+}
+.sheet-rolltemplate-storm .sheet-rolltemplate-dice .inlinerollresult {
+    background: black;
+    color: white;
+}
+.sheet-rolltemplate-thunder .sheet-rolltemplate-dice .inlinerollresult {
+    background: white;
+    color: black;
+}
+.sheet-rolltemplate-bonus-dice .inlinerollresult {
+    background: #880011;
+    color: white;
+}
+.sheet-rolltemplate-mythic {
+    width: 100%;
+    padding: auto;
+}
+.sheet-rolltemplate-mythic .sheet-rolltemplate-dice .inlinerollresult {
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+    font-size: 90px;
 }
