@@ -204,17 +204,27 @@
     max-width: 300px;
     min-height: 150px;
     background: #12151e;
+    background-repeat: no-repeat;
     color: white;
     margin-left: -45px;
     padding: 20px;
 }
 .sheet-rolltemplate-storm {
     background-image: url("https://raw.githubusercontent.com/unique-pear486/Mythender/master/img/storm.gif");
-    background-repeat: no-repeat;
+}
+.sheet-rolltemplate-thunder {
+    background-color: #2d2c2f;
+    background-image: url("https://raw.githubusercontent.com/unique-pear486/Mythender/master/img/lightning.gif");
+}
+.sheet-rolltemplate-mythic {
+    background-image: url("https://raw.githubusercontent.com/unique-pear486/Mythender/master/img/mythic.jpg");
 }
 .sheet-rolltemplate-title {
-    font-size: larger;
+    font-size: 29px;
     font-weight: bold;
+    text-align: left;
+    font-family: "Contrail One";
+    line-height: 2em;
 }
 .sheet-rolltemplate-dice .inlinerollresult,
 .sheet-rolltemplate-bonus-dice .inlinerollresult {
@@ -242,14 +252,18 @@
 }
 .sheet-rolltemplate-mythic {
     width: 100%;
-    padding: auto;
+    text-align: center;
+}
+.sheet-rolltemplate-mythic .sheet-rolltemplate-dice {
+    display: inline-block;
 }
 .sheet-rolltemplate-mythic .sheet-rolltemplate-dice .inlinerollresult {
     width: 100px;
     height: 100px;
-    line-height: 100px;
+    line-height: 110px;
     border-radius: 25px;
     font-size: 90px;
     background-image: linear-gradient(#FFF65C, #3A2C00);
     color: #201800;
+    border: 4px solid #201800;
 }

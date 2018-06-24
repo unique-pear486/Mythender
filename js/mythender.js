@@ -45,7 +45,7 @@ function thunderroll(msg) {
 function mythicroll(msg) {
   const [dice] = params(msg.content);
   const message =
-    `&{template:mythic} {{name=The Die is cast}} {{dice=${repeat('[[d6cs>4cf<3]]', 1 + dice)}}}`;
+    `&{template:mythic} {{name=The Die is cast}} {{dice=${repeat('[[d6]]', 1 + dice)}}}`;
   say(message, msg.who, msg.playerid);
 }
 
