@@ -31,7 +31,6 @@ input.sheet-tab:checked + span {
     color: black;
     background: white;
 }
-
 .sheet-tab-1 {
         grid-template-columns: 2fr 6fr 3fr;
         grid-template-areas:
@@ -99,11 +98,12 @@ input.sheet-tab:checked + span {
 .sheet-corruption-and-forms {
     grid-area: co;
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 110px 1fr;
 }
 .sheet-gifts {
     grid-area: gi;
     min-width: 330px;
+    padding-left: 10px;
 }
 .sheet-quick-ref {
     border: 1px solid black;
@@ -212,6 +212,12 @@ input.sheet-tab:checked + span {
 .sheet-corruption, .sheet-forms {
     grid-column: span 1;
 }
+.sheet-corruption input[type="checkbox"].sheet-permanent {
+    left: -12px;
+}
+.sheet-corruption input[type="checkbox"].sheet-permanent + span::before {
+    left: -12px;
+}
 .sheet-forms input[type=text] {
     width: 100%;
     padding-left: 85px;
@@ -233,6 +239,63 @@ input.sheet-tab:checked + span {
 }
 .sheet-fate .sheet-pre-label {
     top: 20px;
+}
+.sheet-container input[type=checkbox] {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 0px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 2;
+}
+.sheet-container input[type="checkbox"] + span::before {
+    margin-right: 4px;
+    border: solid 1px #000;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    background: #fff;
+}
+.sheet-container input[type="checkbox"]:disabled + span::before {
+    background: #bbb;
+}
+.sheet-container input[type="checkbox"]:checked + span::before {
+    content: "✓";
+}
+.sheet-container input[type="checkbox"].sheet-permanent {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 1;
+    margin: -15px;
+    left: -16px;
+    top: 0px;
+}
+.sheet-container input[type="checkbox"].sheet-permanent + span::before {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    position: relative;
+    left: -16px;
+    margin: -14px;
+    content: "";
+    border-color: rgba(0,0,0,0);
+    border-width: 2px;
+    background: none;
+}
+.sheet-container input[type="checkbox"].sheet-permanent:hover + span::before {
+    border-color: #666;
+}
+.sheet-container input[type="checkbox"].sheet-permanent:checked + span::before {
+    border-color: #000;
 }
 .sheet-rolltemplate-storm,
 .sheet-rolltemplate-thunder,
